@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "PowerShell(Get-Process Code -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowTitle -ne \"\" } | Select-Object Id, MainWindowTitle | Format-Table -AutoSize)",
+      "PowerShell(Stop-Process -Id 10904 -Force)",
+      "PowerShell(netstat -ano)",
+      "Bash(curl -s http://127.0.0.1:5500/)",
+      "Bash(curl -s -I http://127.0.0.1:5500/)",
+      "Bash(curl -s http://127.0.0.1:5500/index.html)",
+      "Bash(curl -s http://127.0.0.1:5500/app.js)"
+    ]
+  }
+}
