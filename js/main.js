@@ -11,17 +11,22 @@ let rundeFarge
 
 let rundeClick
 
+let score = 0
+
 const GameBegin =
 document.querySelector('#GameBegin')
     GameBegin.addEventListener('click', function() {
         spillerInputt = []
         maskinSekvens = []
+        score = 0
+        document.querySelector('#score').textContent = 'Score: 0'
         document.querySelector('#gameOver').classList.add('hidden');
         nyRunde()
     })
 
-
 function nyRunde() {
+    score++
+    document.querySelector('#score').textContent = 'Score: ' + score
     rundeFarge = fargeRekkefølge[Math.floor(Math.random() * 4 + 1)];
     const farge = document.querySelector('#' + rundeFarge);
     maskinSekvens.push(rundeFarge);
@@ -45,7 +50,7 @@ function visSekvens() {
 
 
 //når brukeren trykker på en av knappene blir dette pushet inn i spillerInputt arrayen
-const greenClick = 
+const greenClick =
 document.querySelector('#green');
     greenClick.addEventListener('click', function() {
         spillerInputt.push('green')
@@ -60,7 +65,7 @@ document.querySelector('#green');
         }
 })
 
-const redClick = 
+const redClick =
 document.querySelector('#red');
     redClick.addEventListener('click', function() {
         spillerInputt.push('red')
@@ -75,7 +80,7 @@ document.querySelector('#red');
         }
 })
 
-const yellowClick = 
+const yellowClick =
 document.querySelector('#yellow');
     yellowClick.addEventListener('click', function() {
         spillerInputt.push('yellow')
@@ -90,7 +95,7 @@ document.querySelector('#yellow');
         }
 })
 
-const blueClick = 
+const blueClick =
 document.querySelector('#blue');
     blueClick.addEventListener('click', function() {
         spillerInputt.push('blue')
@@ -104,4 +109,3 @@ document.querySelector('#blue');
             document.querySelector('#gameOver').classList.remove('hidden');
         }
 })
-

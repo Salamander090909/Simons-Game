@@ -1,12 +1,18 @@
 body {
-    background-color: beige;
+    background-color: rgb(243, 243, 239);
+    width: 100%;
+    margin: 0 auto;
 }
 
 .sectionWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    width: 600px;
+    margin: 50px auto;
 }
 
 .sectionWrapper h1:nth-child(2) {
