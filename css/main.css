@@ -6,7 +6,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 50px;
+}
+
+.sectionWrapper h1:nth-child(2) {
+    color: rgb(243, 41, 41);
+}
+
+.hidden {
+    display: none;
 }
 
 .sectionWrapper li {
@@ -63,4 +71,9 @@ body {
     border-radius: 15px;
     scale: 2;
     margin-top: 50px;
+    transition: 0.2s;
+}
+
+#GameBegin:hover {
+    scale: 2.1;
 }

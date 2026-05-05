@@ -11,13 +11,12 @@ let rundeFarge
 
 let rundeClick
 
-const farge = 
-document.querySelector('#' + maskinSekvens[1])
-
-
 const GameBegin =
 document.querySelector('#GameBegin')
     GameBegin.addEventListener('click', function() {
+        spillerInputt = []
+        maskinSekvens = []
+        document.querySelector('#gameOver').classList.add('hidden');
         nyRunde()
     })
 
@@ -30,66 +29,79 @@ function nyRunde() {
 }
 
 function visSekvens() {
-    for(let i = 0; i < maskinSekvens.length; i++) {
-        farge.style.backgroundColor = 'white';
+    for (let i = 0; i < maskinSekvens.length; i++) {
+        const farge = document.querySelector('#' + maskinSekvens[i]);
+
+        setTimeout(() => {
+            farge.style.backgroundColor = 'grey';
+
             setTimeout(() => {
-        farge.style.backgroundColor = "";
+                farge.style.backgroundColor = "";
             }, 500);
+        }, i * 700);
     }
 }
 
 
+
 //når brukeren trykker på en av knappene blir dette pushet inn i spillerInputt arrayen
-const greenClick =
+const greenClick = 
 document.querySelector('#green');
     greenClick.addEventListener('click', function() {
         spillerInputt.push('green')
-
-        if(spillerInputt[spillerInputt.length - 1] == maskinSekvens[maskinSekvens.length -1]) {
-            if(spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = [] //sletter alt som er inne i spillerInputt array så den er klar for ny runde
-                nyRunde()//for å starte neste runde
+        const i = spillerInputt.length - 1;
+        if (spillerInputt[i] == maskinSekvens[i]) {
+            if (spillerInputt.length == maskinSekvens.length) {
+                spillerInputt = []
+                nyRunde()
             }
+        } else {
+            document.querySelector('#gameOver').classList.remove('hidden');
         }
-    })
+})
 
-const redClick =
+const redClick = 
 document.querySelector('#red');
     redClick.addEventListener('click', function() {
         spillerInputt.push('red')
-
-        if(spillerInputt[spillerInputt.length - 1] == maskinSekvens[maskinSekvens.length -1]) {
-            if(spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = [] //sletter alt som er inne i spillerInputt array så den er klar for ny runde
-                nyRunde()//for å starte neste runde
+        const i = spillerInputt.length - 1;
+        if (spillerInputt[i] == maskinSekvens[i]) {
+            if (spillerInputt.length == maskinSekvens.length) {
+                spillerInputt = []
+                nyRunde()
             }
+        } else {
+            document.querySelector('#gameOver').classList.remove('hidden');
         }
-    })
+})
 
-const yellowClick =
+const yellowClick = 
 document.querySelector('#yellow');
     yellowClick.addEventListener('click', function() {
         spillerInputt.push('yellow')
-
-        if(spillerInputt[spillerInputt.length - 1] == maskinSekvens[maskinSekvens.length -1]) {
-            if(spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = [] //sletter alt som er inne i spillerInputt array så den er klar for ny runde
-                nyRunde()//for å starte neste runde
+        const i = spillerInputt.length - 1;
+        if (spillerInputt[i] == maskinSekvens[i]) {
+            if (spillerInputt.length == maskinSekvens.length) {
+                spillerInputt = []
+                nyRunde()
             }
+        } else {
+            document.querySelector('#gameOver').classList.remove('hidden');
         }
-    })
+})
 
-const blueClick =
+const blueClick = 
 document.querySelector('#blue');
     blueClick.addEventListener('click', function() {
         spillerInputt.push('blue')
-
-        if(spillerInputt[spillerInputt.length - 1] == maskinSekvens[maskinSekvens.length -1]) {
-            if(spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = [] //sletter alt som er inne i spillerInputt array så den er klar for ny runde
-                nyRunde()//for å starte neste runde
+        const i = spillerInputt.length - 1;
+        if (spillerInputt[i] == maskinSekvens[i]) {
+            if (spillerInputt.length == maskinSekvens.length) {
+                spillerInputt = []
+                nyRunde()
             }
+        } else {
+            document.querySelector('#gameOver').classList.remove('hidden');
         }
-    })
-
+})
 
