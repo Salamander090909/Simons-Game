@@ -6,20 +6,23 @@
     <title>Simons Game</title>
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="sectionWrapper">
-        <h1>Simons Game</h1>
-        <h1 class="hidden" id="gameOver">GAME OVER</h1>
         <h2 id="score">Score: 0</h2>
-        <li>
-            <div class="green" id="green"></div>
-            <div class="red" id="red"></div>
-        </li>
-        <li>
-            <div class="yellow" id="yellow"></div>
-            <div class="blue" id="blue"></div>
-        </li>
+        <h1 class="hidden" id="gameOver">GAME OVER</h1>
+        <div class="board">
+            <h1 class="title">Simon</h1>
+            <li>
+                <div class="green" id="green"></div>
+                <div class="red" id="red"></div>
+            </li>
+            <li>
+                <div class="yellow" id="yellow"></div>
+                <div class="blue" id="blue"></div>
+            </li>
+        </div>
 
         <button id="GameBegin">Start Game</button>
     </div>
