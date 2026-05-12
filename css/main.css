@@ -72,7 +72,10 @@ body {
     position: relative;
     top: 210px;
     z-index: 5;
-    font-size: 40px;
+    font-size: 30px;
+    font-family: 'Bowlby One', sans-serif;
+    font-style: italic;
+    letter-spacing: 0.02em;
 }
 
 .sectionWrapper li {

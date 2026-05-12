@@ -58,7 +58,21 @@ function visSekvens() {
     }, 1000);
 }
 
+
 //når brukeren trykker på en av knappene blir dette pushet inn i spillerInputt arrayen
+function nesteGameOver(i) {
+    if (spillerInputt[i] == maskinSekvens[i]) {
+            if (spillerInputt.length == maskinSekvens.length) {
+                spillerInputt = []
+                nyRunde()
+            }
+        } else {
+            document.querySelector('#gameOver').classList.remove('hidden');
+        }
+}
+
+
+
 const greenClick =
 document.querySelector('#green');
     greenClick.addEventListener('click', function() {
@@ -68,15 +82,9 @@ document.querySelector('#green');
                 greenClick.style.backgroundColor = "";
             }, 200);    
         const i = spillerInputt.length - 1;
-        if (spillerInputt[i] == maskinSekvens[i]) {
-            if (spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = []
-                nyRunde()
-            }
-        } else {
-            document.querySelector('#gameOver').classList.remove('hidden');
-        }
+        nesteGameOver()
 })
+
 
 const redClick =
 document.querySelector('#red');
@@ -87,14 +95,7 @@ document.querySelector('#red');
                 redClick.style.backgroundColor = "";
             }, 200);  
         const i = spillerInputt.length - 1;
-        if (spillerInputt[i] == maskinSekvens[i]) {
-            if (spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = []
-                nyRunde()
-            }
-        } else {
-            document.querySelector('#gameOver').classList.remove('hidden');
-        }
+        nesteGameOver()
 })
 
 const yellowClick =
@@ -106,14 +107,7 @@ document.querySelector('#yellow');
                 yellowClick.style.backgroundColor = "";
             }, 200);  
         const i = spillerInputt.length - 1;
-        if (spillerInputt[i] == maskinSekvens[i]) {
-            if (spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = []
-                nyRunde()
-            }
-        } else {
-            document.querySelector('#gameOver').classList.remove('hidden');
-        }
+        nesteGameOver()
 })
 
 const blueClick =
@@ -125,12 +119,5 @@ document.querySelector('#blue');
                 blueClick.style.backgroundColor = "";
             }, 200);  
         const i = spillerInputt.length - 1;
-        if (spillerInputt[i] == maskinSekvens[i]) {
-            if (spillerInputt.length == maskinSekvens.length) {
-                spillerInputt = []
-                nyRunde()
-            }
-        } else {
-            document.querySelector('#gameOver').classList.remove('hidden');
-        }
+        nesteGameOver()
 })
