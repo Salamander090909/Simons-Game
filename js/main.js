@@ -11,7 +11,7 @@ let rundeFarge
 
 let rundeClick
 
-let score = 0
+let score
 
 let highscore = Number(localStorage.getItem('highscore')) || 0
 document.querySelector('#HighScore').textContent = 'Highscore: ' + highscore
@@ -21,15 +21,13 @@ document.querySelector('#GameBegin')
     GameBegin.addEventListener('click', function() {
         spillerInputt = []
         maskinSekvens = []
-        score = 0
+        score = -1
         document.querySelector('#score').textContent = 'Score: 0' //får score til å gå ned til 0 før spille starter
         document.querySelector('#gameOver').classList.add('hidden'); //legger på hidden class til game over så man ikke kan se den
         nyRunde()
     })
 
 function nyRunde() {
-    score++
-    document.querySelector('#score').textContent = 'Score: ' + score
     if (score > highscore) {
         highscore = score
         document.querySelector('#HighScore').textContent = 'Highscore: ' + highscore
@@ -38,6 +36,8 @@ function nyRunde() {
     rundeFarge = fargeRekkefølge[Math.floor(Math.random() * 4 + 1)]; //tar et tilfeldig tall fra 1-4
     const farge = document.querySelector('#' + rundeFarge); //gjør om det tilfeldige talle om til rundens farge
     maskinSekvens.push(rundeFarge);
+    score++
+    document.querySelector('#score').textContent = 'Score: ' + score
     visSekvens()
 }
 
