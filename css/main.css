@@ -144,3 +144,10 @@ body {
 #GameBegin:hover {
     scale: 2.1;
 }
+
+
+@media screen and (max-width: 600px) {
+    .sectionWrapper {
+        margin-left: -50px;
+    }
+}
