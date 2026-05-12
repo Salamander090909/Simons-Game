@@ -40,7 +40,7 @@ function visSekvens() {
             const farge = document.querySelector('#' + maskinSekvens[i]);
             
             setTimeout(() => {
-                farge.style.backgroundColor = 'grey';
+                farge.style.backgroundColor = 'white';
                 
                 setTimeout(() => {
                     farge.style.backgroundColor = "";
@@ -55,7 +55,7 @@ const greenClick =
 document.querySelector('#green');
     greenClick.addEventListener('click', function() {
         spillerInputt.push('green')
-            greenClick.style.backgroundColor = 'grey';
+            greenClick.style.backgroundColor = 'white';
             setTimeout(() => {
                 greenClick.style.backgroundColor = "";
             }, 200);    
@@ -74,7 +74,7 @@ const redClick =
 document.querySelector('#red');
     redClick.addEventListener('click', function() {
         spillerInputt.push('red')
-            redClick.style.backgroundColor = 'grey';
+            redClick.style.backgroundColor = 'white';
             setTimeout(() => {
                 redClick.style.backgroundColor = "";
             }, 200);  
@@ -93,7 +93,7 @@ const yellowClick =
 document.querySelector('#yellow');
     yellowClick.addEventListener('click', function() {
         spillerInputt.push('yellow')
-            yellowClick.style.backgroundColor = 'grey';
+            yellowClick.style.backgroundColor = 'white';
             setTimeout(() => {
                 yellowClick.style.backgroundColor = "";
             }, 200);  
@@ -112,7 +112,7 @@ const blueClick =
 document.querySelector('#blue');
     blueClick.addEventListener('click', function() {
         spillerInputt.push('blue')
-            blueClick.style.backgroundColor = 'grey';
+            blueClick.style.backgroundColor = 'white';
             setTimeout(() => {
                 blueClick.style.backgroundColor = "";
             }, 200);  
