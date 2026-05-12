@@ -15,15 +15,24 @@ body {
     scale: 1.3;
 }
 
-.sectionWrapper h1:nth-child(2) {
-    color: rgb(243, 41, 41);
+#score {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 2;
+    font-size: 18px;
 }
 
-.sectionWrapper h2 {
+#HighScore {
     position: absolute;
-    top: 50%;
-    left: 39%;
+    top: 34%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
     z-index: 2;
+    font-size: 18px;
 }
 
 .board {
