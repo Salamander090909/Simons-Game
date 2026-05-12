@@ -136,18 +136,14 @@ body {
 #GameBegin {
     border: 1px transparent;
     border-radius: 5px;
-    scale: 2;
+    scale: 1.8;
     margin-top: 50px;
     transition: 0.2s;
+    font-family: 'Bowlby One', sans-serif;
+    font-style: italic;
+    letter-spacing: 0.02em;
 }
 
 #GameBegin:hover {
-    scale: 2.1;
-}
-
-
-@media screen and (max-width: 600px) {
-    .sectionWrapper {
-        margin-left: -50px;
-    }
+    scale: 1.9;
 }
