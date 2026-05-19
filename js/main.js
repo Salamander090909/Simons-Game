@@ -58,7 +58,6 @@ function visSekvens() {
     }, 1000);
 }
 
-
 //når brukeren trykker på en av knappene blir dette pushet inn i spillerInputt arrayen
 function nesteGameOver(i) {
     if (spillerInputt[i] == maskinSekvens[i]) {
@@ -72,52 +71,44 @@ function nesteGameOver(i) {
 }
 
 
-
 const greenClick =
 document.querySelector('#green');
-    greenClick.addEventListener('click', function() {
-        spillerInputt.push('green')
-            greenClick.style.backgroundColor = 'white';
-            setTimeout(() => {
-                greenClick.style.backgroundColor = "";
-            }, 200);    
-        const i = spillerInputt.length - 1;
-        nesteGameOver()
-})
-
+    click(greenClick, "green", 400)
 
 const redClick =
 document.querySelector('#red');
-    redClick.addEventListener('click', function() {
-        spillerInputt.push('red')
-            redClick.style.backgroundColor = 'white';
-            setTimeout(() => {
-                redClick.style.backgroundColor = "";
-            }, 200);  
-        const i = spillerInputt.length - 1;
-        nesteGameOver()
-})
+    click(redClick, "red", 470)
 
 const yellowClick =
 document.querySelector('#yellow');
-    yellowClick.addEventListener('click', function() {
-        spillerInputt.push('yellow')
-            yellowClick.style.backgroundColor = 'white';
-            setTimeout(() => {
-                yellowClick.style.backgroundColor = "";
-            }, 200);  
-        const i = spillerInputt.length - 1;
-        nesteGameOver()
-})
+    click(yellowClick, "yellow", 530)
 
 const blueClick =
 document.querySelector('#blue');
-    blueClick.addEventListener('click', function() {
-        spillerInputt.push('blue')
-            blueClick.style.backgroundColor = 'white';
-            setTimeout(() => {
-                blueClick.style.backgroundColor = "";
-            }, 200);  
+    click(blueClick, "blue", 600)
+
+const audioCtx = new AudioContext();
+
+function playTone(freq) {
+    const osc = audioCtx.createOscillator();
+    osc.frequency.value = freq;
+    osc.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.1);
+}
+
+function fargeSkift(farge) {
+    farge.style.backgroundColor = 'white';
+        setTimeout(() => {
+            farge.style.backgroundColor = "";
+        }, 200);  
+}
+
+function click(fargeClick, farge, tone) {
+    fargeClick.addEventListener('click', function() {
+        spillerInputt.push(farge)
+            playTone(tone)
+            fargeSkift(fargeClick)
         const i = spillerInputt.length - 1;
-        nesteGameOver()
-})
+        nesteGameOver(i)   
+} )}
