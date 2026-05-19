@@ -150,3 +150,11 @@ body {
 #GameBegin:hover {
     scale: 1.9;
 }
+
+#fargeBytte {
+    margin-top: 30px;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    background-color: white;
+    color: black;
+}

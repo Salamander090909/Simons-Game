@@ -14,6 +14,8 @@ let rundeFarge
 
 let rundeClick
 
+let spillerKanKlikke = false
+
 let score
 
 let highscore = Number(localStorage.getItem('highscore')) || 0
@@ -47,11 +49,16 @@ function nyRunde() {
 function visSekvens() {
     setTimeout(() => {
 
+        spillerKanKlikke = false
         for (let i = 0; i < maskinSekvens.length; i++) {
+
             const farge = document.querySelector('#' + maskinSekvens[i]);
             
             setTimeout(() => {
                 playTone(fargeToner[maskinSekvens[i]])
+                if(i === maskinSekvens.length -1) {
+                    spillerKanKlikke = true
+                }
                 farge.style.backgroundColor = 'white';
                 
                 setTimeout(() => {
@@ -110,9 +117,11 @@ function fargeSkift(farge) {
 
 function click(fargeClick, farge, tone) {
     fargeClick.addEventListener('click', function() {
+        if (!spillerKanKlikke) return
         spillerInputt.push(farge)
             playTone(tone)
             fargeSkift(fargeClick)
         const i = spillerInputt.length - 1;
         nesteGameOver(i)   
 } )}
+
