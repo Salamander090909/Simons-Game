@@ -4,6 +4,9 @@ let fargeRekkefølge =
 let spillerInputt =
 [] //lagrer hva som brukeren trykker og sammenligner med maskinSekvens
 
+const fargeToner = 
+{ green: 400, red: 470, yellow: 530, blue: 600 }
+
 let maskinSekvens =
 [] //lagrer hva en farge velger som sinn random farge
 
@@ -48,6 +51,7 @@ function visSekvens() {
             const farge = document.querySelector('#' + maskinSekvens[i]);
             
             setTimeout(() => {
+                playTone(fargeToner[maskinSekvens[i]])
                 farge.style.backgroundColor = 'white';
                 
                 setTimeout(() => {
