@@ -33,16 +33,16 @@ document.querySelector('#GameBegin')
     })
 
 function nyRunde() {
-    if (score > highscore) {
-        highscore = score
-        document.querySelector('#HighScore').textContent = 'Highscore: ' + highscore
-        localStorage.setItem('highscore', highscore)
-    }
     rundeFarge = fargeRekkefølge[Math.floor(Math.random() * 4 + 1)]; //tar et tilfeldig tall fra 1-4
     const farge = document.querySelector('#' + rundeFarge); //gjør om det tilfeldige talle om til rundens farge
     maskinSekvens.push(rundeFarge);
     score++
     document.querySelector('#score').textContent = 'Score: ' + score
+    if (score > highscore) {
+        highscore = score
+        document.querySelector('#HighScore').textContent = 'Highscore: ' + highscore
+        localStorage.setItem('highscore', highscore)
+    }
     visSekvens()
 }
 
@@ -77,6 +77,11 @@ function nesteGameOver(i) {
                 nyRunde()
             }
         } else {
+            if (score > highscore) {
+                highscore = score
+                document.querySelector('#HighScore').textContent = 'Highscore: ' + highscore
+                localStorage.setItem('highscore', highscore)
+            }
             document.querySelector('#gameOver').classList.remove('hidden');
         }
 }
@@ -124,4 +129,3 @@ function click(fargeClick, farge, tone) {
         const i = spillerInputt.length - 1;
         nesteGameOver(i)   
 } )}
-
