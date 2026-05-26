@@ -77,11 +77,6 @@ function nesteGameOver(i) {
                 nyRunde()
             }
         } else {
-            if (score > highscore) {
-                highscore = score
-                document.querySelector('#HighScore').textContent = 'Highscore: ' + highscore
-                localStorage.setItem('highscore', highscore)
-            }
             document.querySelector('#gameOver').classList.remove('hidden');
         }
 }
